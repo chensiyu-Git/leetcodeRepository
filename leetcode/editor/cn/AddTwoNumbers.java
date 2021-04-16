@@ -40,9 +40,15 @@
 // Related Topics 递归 链表 数学 
 // 👍 6031 👎 0
 
+import java.util.List;
+
 public class AddTwoNumbers {
     public static void main(String[] args) {
         Solution solution = new AddTwoNumbers().new Solution();
+        ListNode l1 = new ListNode(9, new ListNode(9,new ListNode(9, new ListNode(9,new ListNode(9, new ListNode(9,new ListNode(9)))))));
+        ListNode l2 = new ListNode(9,new ListNode(9, new ListNode(9,new ListNode(9))));
+        ListNode res = solution.addTwoNumbers(l1,l2);
+        System.out.println("end");
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 /**
@@ -58,16 +64,37 @@ public class AddTwoNumbers {
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         //相加三要素，加数、加数、进位符
-    }
-
-    public class ListNode{
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+        ListNode res = null;
+        ListNode frist = null;
+        int jwf = 0;
+        while (l1 != null || l2 != null){
+            int val1 = l1 == null ? 0 : l1.val;
+            int val2 = l2 == null ? 0 : l2.val;
+            int addRes = val1+val2+jwf;
+            jwf = addRes/10;
+            if(res == null){
+                res = new ListNode(addRes%10);
+                frist = res;
+            }else {
+                res.next=new ListNode(addRes%10);
+                res = res.next;
+            }
+            l1 = l1 == null ? null : l1.next;
+            l2 = l2 == null ? null : l2.next;
+        }
+        if(jwf != 0){
+            res.next = new ListNode(jwf);
+        }
+        return frist;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
+    static class ListNode{
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
 }
