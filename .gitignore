@@ -1,0 +1,14 @@
+#create by cl 
+
+#所有idea的配置文件
+/leetcode/.idea/
+
+#所有class文件
+*.class
+
+/leetcode/out/
+
+/leetcode/leetcode.iml
+
+/leetcode/editor/cn/doc/
+
