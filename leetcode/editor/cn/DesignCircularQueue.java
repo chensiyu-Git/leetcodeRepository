@@ -48,12 +48,13 @@
 public class DesignCircularQueue {
     public static void main(String[] args) {
         MyCircularQueue solution = new DesignCircularQueue().new MyCircularQueue(3);
-        solution.enQueue(3);
-        solution.enQueue(2);
-        solution.enQueue(1);
-        solution.enQueue(10);
-        solution.Rear();
-
+        StringBuffer sbf = new StringBuffer("[queueLength]:3\n****\n");
+        sbf.append("enQueue(3)-").append(solution.enQueue(3)).append("\n****\n")
+                .append("enQueue(2)-").append(solution.enQueue(2)).append("\n****\n")
+                .append("enQueue(1)-").append(solution.enQueue(1)).append("\n****\n")
+                .append("enQueue(10)-").append(solution.enQueue(10)).append("\n****\n")
+                .append("Rear()-").append(solution.Rear()).append("\n****\n");
+        System.out.println(sbf);
     }
     /**
      * 基于数组的循环队列设计
