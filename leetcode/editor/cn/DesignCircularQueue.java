@@ -70,7 +70,7 @@ class MyCircularQueue {
     int[] queue;
     int headPointer;
     int tailPointer;
-    int freeLength;
+//    int freeLength;
     int usedLength;
     final int queueLength;
 
@@ -81,31 +81,31 @@ class MyCircularQueue {
         queue = new int[k];
         queueLength = k;
         headPointer = 0;
-        freeLength = k;
+//        freeLength = k;
         usedLength = 0;
         tailPointer = -1;
     }
     
     public boolean enQueue(int value) {
-        if(freeLength == 0){
+        if(isFull()){
             return false;
         }
         //入队列表示循环记录
         tailPointer = ++tailPointer % queueLength;
         queue[tailPointer] = value;
         usedLength++;
-        freeLength--;
+//        freeLength--;
         return true;
     }
     
     public boolean deQueue() {
         //从队列头删一个元素，删除成功则返回true
-        if(usedLength == 0){
+        if(isEmpty()){
             return false;
         }
         //头指针指向下一位，并把free+1，use-1
         headPointer = ++headPointer % queueLength;
-        freeLength++;
+//        freeLength++;
         usedLength--;
         return true;
     }
@@ -129,7 +129,8 @@ class MyCircularQueue {
     }
     
     public boolean isFull() {
-        return freeLength == 0;
+//        return freeLength == 0;
+        return usedLength == queueLength;
     }
 }
 
