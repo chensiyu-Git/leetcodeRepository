@@ -54,10 +54,12 @@ public class DesignCircularQueue {
                 .append("enQueue(1)-").append(solution.enQueue(1)).append("\n****\n")
                 .append("enQueue(10)-").append(solution.enQueue(10)).append("\n****\n")
                 .append("Rear()-").append(solution.Rear()).append("\n****\n")
+                .append("Front()-").append(solution.Front()).append("\n****\n")
                 .append("isFull()-").append(solution.isFull()).append("\n****\n")
                 .append("deQueue()-").append(solution.deQueue()).append("\n****\n")
                 .append("enQueue(4)-").append(solution.enQueue(4)).append("\n****\n")
-                .append("Rear()-").append(solution.Rear()).append("\n****\n");
+                .append("Rear()-").append(solution.Rear()).append("\n****\n")
+                .append("Front()-").append(solution.Front()).append("\n****\n");
         System.out.println(sbf);
     }
     /**
