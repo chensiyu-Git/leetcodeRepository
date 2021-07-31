@@ -47,8 +47,8 @@ import java.util.Map;
 public class TwoSum {
     public static void main(String[] args) {
         Solution solution = new TwoSum().new Solution();
-        int[] i = new int[]{3,2,4};
-        int[] res = solution.twoSum(i,6);
+        int[] i = new int[]{1,1,1};
+        int[] res = solution.twoSum(i,2);
         System.out.println("end");
 
     }
