@@ -69,7 +69,7 @@ public class NumberOfIslands {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int numIslands(char[][] grid) {
-            //应该使用广度搜索做全遍历能实现岛屿数量的检查
+            //使用深度搜索做全遍历能实现岛屿数量的检查
             char[][] searched = new char[grid.length][];
             for(int i=0;i<grid.length;i++){
                 searched[i] = new char[grid[i].length];
